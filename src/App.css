@@ -1,0 +1,11 @@
+.shape1 {
+    clip-path: circle(100.0% at 0 100%);
+    height: 300px;
+    width: 300px;
+}
+
+.shape2 {
+    clip-path: circle(100.0% at 100% 0);
+    height: 300px;
+    width: 300px;
+}
