@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Swal from 'sweetalert2'
 
 const Product = () => {
     const [data, setData] = useState([])
@@ -7,6 +8,13 @@ const Product = () => {
             .then(res => res.json())
             .then(res => setData(res))
     }, [])
+    const handleAddToCart = () => {
+        Swal.fire(
+            'Success',
+            'Added to cart Successfully',
+            'success'
+        );
+    }
     return (
         <>
             <div className='pt-32'>
@@ -29,7 +37,7 @@ const Product = () => {
                                     <p>Price : {ele.price}</p>
                                     <p>Instock : {ele.stock ? "Yes" : "No"}</p>
                                     <div className='w-full py-4 text-center'>
-                                        <button className='btn bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold'>Add to Cart</button>
+                                        <button onClick={handleAddToCart} className='btn bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold'>Add to Cart</button>
                                     </div>
                                 </div>
                             </div>
