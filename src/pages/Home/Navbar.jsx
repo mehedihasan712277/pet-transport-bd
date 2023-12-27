@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { MdAccountCircle } from "react-icons/md";
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then(res => {
+                console.log("signed out");
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
     return (
         <>
             <nav className='fixed top-0 left-0 right-0 bg-gradient-to-r from-cyan-500 to-blue-500 z-20 text-white w-screen'>
@@ -30,8 +41,15 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div className="navbar-end">
-                        <Link to="/signup">Create Account</Link>
-                        <p><MdAccountCircle className='text-3xl'></MdAccountCircle></p>
+                        {
+                            user ?
+                                <button onClick={handleLogOut} className='hover:text-black'>Logout</button>
+                                :
+                                <>
+                                    <Link to="/signup">Create Account</Link>
+                                    <p><MdAccountCircle className='text-3xl'></MdAccountCircle></p>
+                                </>
+                        }
                     </div>
                 </div>
             </nav >

@@ -13,6 +13,8 @@ import SignUp from './pages/Authentication/SignUp';
 import Hostel from './pages/Service/hostel/Hostel'
 import Grooming from './pages/Service/grooming/Grooming'
 import Doctor from './pages/Service/doctor/Doctor'
+import Private from './pages/Private'
+import Control from './pages/Authentication/Control'
 
 
 const allRoute = createBrowserRouter([
@@ -31,11 +33,11 @@ const allRoute = createBrowserRouter([
       },
       {
         path: "/transport",
-        element: <Transport></Transport>
+        element: <Private><Transport></Transport></Private>
       },
       {
         path: "/product",
-        element: <Product></Product>
+        element: <Private><Product></Product></Private>
       },
       {
         path: "/hostel",
@@ -56,6 +58,10 @@ const allRoute = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp></SignUp>
+      },
+      {
+        path: "/control",
+        element: <Control></Control>
       }
     ]
   }
