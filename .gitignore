@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 .vercel
-src/Provider/firebase.config.js
+firebase.config.js
