@@ -4,7 +4,8 @@ import Swal from 'sweetalert2'
 const Product = () => {
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch("https://api.jsonbin.io/v3/b/658c34181f5677401f14096f")
+        // fetch("https://api.jsonbin.io/v3/b/658c34181f5677401f14096f")
+        fetch("https://backend-ptbd.vercel.app/data")
             .then(res => res.json())
             .then(res => setData(res))
     }, [])
@@ -26,7 +27,7 @@ const Product = () => {
                 </div>
                 <div className='flex flex-wrap justify-center items-center gap-4 lg:gap-12 max-w-4xl mx-auto pb-12'>
                     {
-                        data.record?.map((ele, index) => {
+                        data.map((ele, index) => {
                             return <div key={index} className='shadow-2xl  w-72 lg:w-64'>
                                 <div className='h-64 w-72 lg:w-64'>
                                     <img src={ele.image} alt="img" className='w-full h-full' />
