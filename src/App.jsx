@@ -14,7 +14,7 @@ import Hostel from './pages/Service/hostel/Hostel'
 import Grooming from './pages/Service/grooming/Grooming'
 import Doctor from './pages/Service/doctor/Doctor'
 import Private from './pages/Private'
-import Control from './pages/Authentication/Control'
+import Control from './Control/Control'
 
 
 const allRoute = createBrowserRouter([
