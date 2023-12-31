@@ -28,6 +28,7 @@ const Navbar = () => {
                                 <li><Link>About</Link></li>
                                 <li><Link>Service</Link></li>
                                 <li><Link>Contact</Link></li>
+                                <li><Link to="/control">Control</Link></li>
                             </div>
                         </div>
                         <Link className="normal-case font-bold text-sm sm:text-2xl ml-2" to="/">Pet Transport</Link>
@@ -38,6 +39,7 @@ const Navbar = () => {
                             <Link>About</Link>
                             <Link>Service</Link>
                             <Link>Contact</Link>
+                            <Link to="/control">Control</Link>
                         </div>
                     </div>
                     <div className="navbar-end">

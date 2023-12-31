@@ -1,16 +1,35 @@
 import React from 'react'
+import Swal from 'sweetalert2';
 
 const Add = () => {
     const handleAddProduct = (event) => {
         event.preventDefault();
         const form = event.target;
-        const link = form.imageLink.value;
-        const productName = form.productName.value;
-        const productDescription = form.productDescription.value;
+        const image = form.imageLink.value;
+        const name = form.productName.value;
+        const description = form.productDescription.value;
         const price = form.price.value;
-        const inStock = form.inStock.value;
+        const instock = form.inStock.value;
 
-        console.log(link, productName, productDescription, price, inStock);
+        const data = { image, name, description, price, instock };
+
+        fetch("https://backend-ptbd.vercel.app/data", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(res => {
+                console.log(res);
+                event.target.reset();
+                Swal.fire(
+                    'Success',
+                    'Product added successfully',
+                    'success'
+                )
+            });
     }
     return (
         <>
