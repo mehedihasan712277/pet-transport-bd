@@ -9,9 +9,9 @@ const Add = () => {
         const name = form.productName.value;
         const description = form.productDescription.value;
         const price = form.price.value;
-        const instock = form.inStock.value;
+        const stock = form.inStock.value;
 
-        const data = { image, name, description, price, instock };
+        const data = { image, name, description, price, stock };
 
         fetch("https://backend-ptbd.vercel.app/data", {
             method: "POST",

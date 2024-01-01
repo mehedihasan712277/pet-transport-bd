@@ -15,6 +15,7 @@ import Grooming from './pages/Service/grooming/Grooming'
 import Doctor from './pages/Service/doctor/Doctor'
 import Private from './pages/Private'
 import Control from './Control/Control'
+import Edit from './Control/Edit'
 
 
 const allRoute = createBrowserRouter([
@@ -63,6 +64,11 @@ const allRoute = createBrowserRouter([
         path: "/control",
         element: <Control></Control>,
         loader: () => fetch('https://backend-ptbd.vercel.app/data')
+      },
+      {
+        path: "/edit/:id",
+        element: <Edit></Edit>,
+        loader: ({ params }) => fetch(`https://backend-ptbd.vercel.app/data/${params.id}`)
       }
     ]
   }
