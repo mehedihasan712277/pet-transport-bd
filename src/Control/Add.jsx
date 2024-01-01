@@ -8,8 +8,8 @@ const Add = () => {
         const image = form.imageLink.value;
         const name = form.productName.value;
         const description = form.productDescription.value;
-        const price = form.price.value;
-        const stock = form.inStock.value;
+        const price = Number(form.price.value);
+        const stock = Boolean(form.inStock.value);
 
         const data = { image, name, description, price, stock };
 
@@ -58,7 +58,7 @@ const Add = () => {
                     <span>Instock : </span>
                     <input type="radio" id="yes" value="true" name="inStock" />
                     <label htmlFor="yes"> Yes  </label>
-                    <input type="radio" id="no" value="false" name="inStock" />
+                    <input type="radio" id="no" value="" name="inStock" />
                     <label htmlFor="no"> No</label>
                 </div>
 
