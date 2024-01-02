@@ -5,7 +5,6 @@ import Swal from 'sweetalert2';
 
 const LogIn = () => {
     const location = useLocation()
-    console.log(location);
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
 
@@ -18,12 +17,12 @@ const LogIn = () => {
         signIn(email, password)
             .then(res => {
                 form.reset();
-                navigate(location?.state ? location?.state : "/");
                 Swal.fire(
                     'Success',
                     'Successfully Logged In',
                     'success'
-                )
+                );
+                navigate(location?.state ? location?.state : "/");
             })
             .catch(err => {
                 Swal.fire(

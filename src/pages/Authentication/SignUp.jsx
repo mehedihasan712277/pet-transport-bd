@@ -4,7 +4,7 @@ import { AuthContext } from '../../Provider/AuthProvider'
 import Swal from 'sweetalert2'
 
 const SignUp = () => {
-    const { createUser, user } = useContext(AuthContext)
+    const { createUser } = useContext(AuthContext)
     const [err, setErr] = useState("")
     const navigate = useNavigate()
 
@@ -33,12 +33,12 @@ const SignUp = () => {
         createUser(email, password)
             .then(res => {
                 form.reset();
-                navigate("/");
                 Swal.fire(
                     'Success',
                     'Account Created Successfully',
                     'success'
                 );
+                navigate("/");
             })
             .catch(err => {
                 Swal.fire(

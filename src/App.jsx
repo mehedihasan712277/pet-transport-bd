@@ -63,7 +63,7 @@ const allRoute = createBrowserRouter([
       {
         path: "/control",
         element: <Control></Control>,
-        loader: () => fetch('https://backend-ptbd.vercel.app/data')
+        // loader: () => fetch('https://backend-ptbd.vercel.app/data')
       },
       {
         path: "/edit/:id",
