@@ -17,13 +17,6 @@ const Items = ({ info }) => {
                 }
             })
     }
-    // if (!deletedData.length) {
-    //     return <>
-    //         <div className='pt-20 w-full flex justify-center items-center'>
-    //             <span className="loading loading-spinner text-accent"></span>
-    //         </div>
-    //     </>
-    // }
     return (
         <>
             <div className='py-6 flex flex-wrap justify-center items-center gap-4 lg:gap-6 max-w-4xl mx-auto bg-gray-200 h-[400px] overflow-y-auto shadow-2xl'>
