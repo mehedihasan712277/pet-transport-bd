@@ -5,7 +5,6 @@ import Items from './Items';
 
 const Control = () => {
     // const info = useLoaderData()
-
     const [loading, setLoading] = useState(true)
     const [info, setInfo] = useState([]);
     useEffect(() => {
